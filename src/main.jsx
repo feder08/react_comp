@@ -6,7 +6,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
 	<NavBar
-		logo=".src\asset\loguito.svg"
+		logo="./asset/loguito.svg"
 		btnNav={[
 			{label: "Home", link: "#home"},
 			{label: "Services", link: "#services"},
