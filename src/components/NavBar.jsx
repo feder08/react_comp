@@ -85,7 +85,7 @@ export default NavBar;
 //PARA IMPORTAR EL COMPONENTE EN OTRO ARCHIVO
 {
 	/* <NavBar
-logo="src\asset\loguito.svg"
+logo=".asset/loguito.svg"
 btnNav={[
     {label: "Home", link: "#home"},
     {label: "Services", link: "#services"},
