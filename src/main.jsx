@@ -1,13 +1,12 @@
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import {NavBar} from "./components/NavBar";
-import logo from "./asset/loguito.svg";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
 	<NavBar
-		logo="asset/loguito.svg"
+		logo=".asset/loguito.svg"
 		btnNav={[
 			{label: "Home", link: "#home"},
 			{label: "Services", link: "#services"},
