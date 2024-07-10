@@ -1,7 +1,7 @@
 //Validacion de los PROP q voy a usar en un funcion para evitar posibles errores
 import PropTypes from "prop-types";
 //importar useState para usarlo en mi funcion NavBar y useEffect para añadir icono hamburguesa.
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import {FaBars, FaTimes} from "react-icons/fa";
 import MobileMenu from "./MobileMenu";
 
@@ -13,6 +13,20 @@ export function NavBar({logo, btnNav, logoLink}) {
 	const toggleMenu = () => {
 		setMenuOpen(!menuOpen);
 	};
+	useEffect(() => {
+		const handleScrollAndResize = () => {
+			if (menuOpen) {
+				setMenuOpen(false);
+			}
+		};
+		window.addEventListener("scroll", handleScrollAndResize);
+		window.addEventListener("resize", handleScrollAndResize);
+
+		return () => {
+			window.removeEventListener("scroll", handleScrollAndResize);
+			window.removeEventListener("resize", handleScrollAndResize);
+		};
+	}, [menuOpen]);
 
 	return (
 		<nav className=" bg-gray-300 bg-opacity-75 flex items-center justify-between shadow-sm ">
