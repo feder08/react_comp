@@ -32,7 +32,7 @@ export function NavBar({logo, btnNav, logoLink}) {
 		<nav className=" bg-lime-200 bg-opacity-75 flex items-center justify-between shadow-sm ">
 			<div className="flex items-center pl-4">
 				<a href={logoLink} className="flex items-center pl-4">
-					<img className="size-20 " src={logo} alt="Logo" />
+					<img className="size-16 " src={logo} alt="Logo" />
 				</a>
 				{/* depend on size-x see mobileMenu */}
 			</div>
