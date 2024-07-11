@@ -18,8 +18,9 @@ const MobileMenu = ({
 		}
 	}, [menuOpen]);
 	return (
+		// Change top-x depend on logo size
 		<div
-			className={`fixed  top-16 right-0 bottom-0 items-center justify-center z-50 bg-gray-300 bg-opacity-75 w-1/2 h-auto rounded-b-md transition-transform duration-700 ease-in-out shadow-sm max-h-full overflow-y-auto ${menuClass}`}
+			className={`fixed  top-20 right-0 bottom-0 items-center justify-center z-50 bg-lime-200 bg-opacity-80 w-1/2 h-auto rounded-b-md transition-transform duration-700 ease-in-out shadow-sm max-h-full overflow-y-auto ${menuClass}`}
 		>
 			<ul className="space-y-4 p-2">
 				{btnNav.map((btn, index) => (
@@ -28,8 +29,8 @@ const MobileMenu = ({
 							href={activeSection === btn.label ? null : btn.link}
 							className={`block text-center py-2 px-4 rounded-md transition duration-300 ease-in-out ${
 								activeSection === btn.label
-									? "font-bold cursor-default text-gray-500"
-									: "text-gray-700 hover:bg-gray-400 hover:text-white hover:shadow-sm"
+									? "font-bold cursor-default text-neutral-600"
+									: "text-neutral-800 hover:bg-lime-400 hover:text-neutral-100 hover:shadow-sm"
 							}`}
 							onClick={() => {
 								if (activeSection !== btn.label) {

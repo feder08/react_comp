@@ -29,11 +29,12 @@ export function NavBar({logo, btnNav, logoLink}) {
 	}, [menuOpen]);
 
 	return (
-		<nav className=" bg-gray-300 bg-opacity-75 flex items-center justify-between shadow-sm ">
+		<nav className=" bg-lime-200 bg-opacity-75 flex items-center justify-between shadow-sm ">
 			<div className="flex items-center pl-4">
 				<a href={logoLink} className="flex items-center pl-4">
-					<img className="size-16 " src={logo} alt="Logo" />{" "}
+					<img className="size-20 " src={logo} alt="Logo" />
 				</a>
+				{/* depend on size-x see mobileMenu */}
 			</div>
 			<ul className=" space-x-8 justify-end pr-4 hidden md:flex">
 				{/* Al usar map en el prop btnNav este espera que le pase un array y recibir 2 parametros btn e index */}
@@ -44,8 +45,8 @@ export function NavBar({logo, btnNav, logoLink}) {
 							href={activeSection === btn.label ? null : btn.link}
 							className={`py-2 px-4 rounded-md transition duration-300 ease-in-out ${
 								activeSection === btn.label
-									? "font-bold cursor-default text-gray-500"
-									: "text-gray-700 hover:bg-gray-400 hover:text-white hover:shadow-sm"
+									? "font-bold cursor-default text-neutral-600"
+									: "text-neutral-800 hover:bg-lime-400 hover:text-neutral-100 hover:shadow-sm"
 							}`}
 							onClick={() => {
 								if (activeSection !== btn.label) {
@@ -53,7 +54,7 @@ export function NavBar({logo, btnNav, logoLink}) {
 								}
 							}}
 						>
-							{btn.label}{" "}
+							{btn.label}
 							{/*btn.label accede al valor de la propiedad label de ese objeto, que es el texto que se mostrará como contenido del enlace <a>*/}
 						</a>
 					</li>
