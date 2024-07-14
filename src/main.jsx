@@ -21,9 +21,9 @@ root.render(
 		/>
 		<SectionHome
 			imgHome={imgHome}
-			homeSlogan="¿Queres alcanzar tus objetivos?"
-			homeInfo="Aprovecha nuestras rutinas personalizas para el gimnasio o casa, seguimiento nutricional y acompañamiento 24/7 para asegurar tu exito"
-			btnWelcome="Proba nuestro programa"
+			homeSlogan="¿Listo para alcanzar tus metas?"
+			homeInfo="Descubre cómo nuestras rutinas personalizadas para el gimnasio o casa, seguimiento nutricional y acompañamiento 24/7 pueden asegurar tu éxito. Explora más y transforma tu vida hoy mismo."
+			btnWelcome="Explora Nuestro Programa"
 			sectionTittleCard="Nuestros servicios"
 		/>
 		<CardHome />

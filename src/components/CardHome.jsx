@@ -29,7 +29,7 @@ const CardHome = () => {
 	];
 	return (
 		<section className="text-lime-500 bg-lime-100 min-h-screen py-8 text-center ">
-			<h1 className="container mx-auto mb-24 mt-5 px-4 text-2xl sm:text-3xl md:text-4xl lg:text-6xl uppercase italic">
+			<h1 className="container mx-auto mb-24 mt-5 px-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase italic">
 				<strong> {sectionTittleCard}</strong>
 			</h1>
 			<div className="flex flex-wrap  justify-center items-stretch gap-8 xl:gap-x-44 w-full">

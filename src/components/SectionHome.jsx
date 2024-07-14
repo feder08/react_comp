@@ -12,10 +12,10 @@ export function SectionHome({imgHome, homeSlogan, homeInfo, btnWelcome}) {
 				<h1 className="text-5xl lg:text-6xl xl:text-7xl mb-8  bg-black bg-opacity-35 rounded-md md:bg-transparent md:bg-opacity-0">
 					<strong>{homeSlogan}</strong>
 				</h1>
-				<p className="text-lg  lg:text-xl xl:text-3xl mt-16 mb-16  md:text-left text-lime-200 bg-black bg-opacity-35  rounded-md">
+				<p className="text-lg  lg:text-xl xl:text-3xl mt-16 mb-16  md:text-left text-lime-200 bg-black bg-opacity-35 rounded-md">
 					{homeInfo}
 				</p>
-				<button className="mt-16 px-6 py-3 bg-lime-200 text-neutral-600 font-bold rounded-lg hover:bg-lime-400 hover:text-neutral-100 sm:text-lg shadow-sm hover:shadow-sm transition-transform duration-300 ease-in-out">
+				<button className="mt-16 px-6 py-3 bg-lime-200 text-neutral-600 font-bold rounded-lg hover:bg-lime-400 hover:text-neutral-100 sm:text-lg shadow-sm hover:shadow-sm transition-transform duration-300 ease-in-out uppercase">
 					{btnWelcome}
 				</button>
 			</div>
