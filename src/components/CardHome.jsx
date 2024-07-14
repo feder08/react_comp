@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import Card from "./Card.jsx";
 import logo01 from "../asset/images/iconsCARD/bicep.svg";
 import logo02 from "../asset/images/iconsCARD/dumbell.svg";
@@ -30,10 +29,10 @@ const CardHome = () => {
 	];
 	return (
 		<section className="text-lime-500 bg-lime-100 min-h-screen py-8 text-center ">
-			<h1 className="container mx-auto mb-24 mt-5 px-4 text-5xl uppercase italic">
+			<h1 className="container mx-auto mb-24 mt-5 px-4 text-2xl sm:text-3xl md:text-4xl lg:text-6xl uppercase italic">
 				<strong> {sectionTittleCard}</strong>
 			</h1>
-			<div className="flex flex-wrap  justify-evenly items-stretch gap-8 w-full  ">
+			<div className="flex flex-wrap  justify-center items-stretch gap-8 xl:gap-x-44 w-full">
 				{cardHome.map((card, index) => (
 					<Card
 						key={index}
@@ -47,10 +46,4 @@ const CardHome = () => {
 	);
 };
 
-CardHome.propTypes = {
-	sectionTittleCard: PropTypes.string,
-	logoCard: PropTypes.string,
-	subtCard: PropTypes.string.isRequired,
-	infoCard: PropTypes.string.isRequired,
-};
 export default CardHome;

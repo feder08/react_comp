@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 export function Card({logoCard, subtCard, infoCard, children}) {
 	return (
 		<div className="max-w-xs rounded overflow-hidden shadow-sm bg-white bg-opacity-40 px-6 py-4 op justify-center ">
-			{logoCard && <img className="w-full" src={logoCard} />}
-			<h2 className="font-bold text-xl mb-2">{subtCard}</h2>
-			<p className="text-gray-700  text-base">{infoCard}</p>
+			{logoCard && <img className=" w-full" src={logoCard} />}
+			<h2 className="font-bold text-xl mb-2 sm:text-2xl">{subtCard}</h2>
+			<p className="text-gray-700  text-sm	 sm:text-base">{infoCard}</p>
 			{children}
 		</div>
 	);

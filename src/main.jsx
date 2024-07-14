@@ -3,7 +3,7 @@ import "./index.css";
 import {NavBar} from "./components/NavBar";
 import logo from "./asset/images/Loguito001.svg";
 import SectionHome from "./components/SectionHome";
-import imgHome from "./asset/images/background.png";
+import imgHome from "./asset/images/background.jpg";
 import CardHome from "./components/CardHome";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

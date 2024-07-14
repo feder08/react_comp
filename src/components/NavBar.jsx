@@ -43,7 +43,7 @@ export function NavBar({logo, btnNav, logoLink}) {
 						<li key={index}>
 							{/*Cada iteracion me devuelve un LI con un A Link va ser la el A e indicara si esta seleccionado o no. Dentro le pongo una clase con un operado ternarario que me permite cambiar el estado de la variable activeSection*/}
 							<a
-								href={activeSection === btn.label ? null : btn.link}
+								href={btn.link}
 								className={`py-2 px-4 rounded-md transition duration-300 ease-in-out ${
 									activeSection === btn.label
 										? "font-bold cursor-default text-neutral-600"
