@@ -29,57 +29,59 @@ export function NavBar({logo, btnNav, logoLink}) {
 	}, [menuOpen]);
 
 	return (
-		<nav className=" bg-lime-200 bg-opacity-75 flex items-center justify-between shadow-sm ">
-			<div className="flex items-center pl-4">
-				<a href={logoLink} className="flex items-center pl-4">
-					<img className="size-16 " src={logo} alt="Logo" />
-				</a>
-				{/* depend on size-x see mobileMenu */}
-			</div>
-			<ul className=" space-x-8 justify-end pr-4 hidden md:flex">
-				{/* Al usar map en el prop btnNav este espera que le pase un array y recibir 2 parametros btn e index */}
-				{btnNav.map((btn, index) => (
-					<li key={index}>
-						{/*Cada iteracion me devuelve un LI con un A Link va ser la el A e indicara si esta seleccionado o no. Dentro le pongo una clase con un operado ternarario que me permite cambiar el estado de la variable activeSection*/}
-						<a
-							href={activeSection === btn.label ? null : btn.link}
-							className={`py-2 px-4 rounded-md transition duration-300 ease-in-out ${
-								activeSection === btn.label
-									? "font-bold cursor-default text-neutral-600"
-									: "text-neutral-800 hover:bg-lime-400 hover:text-neutral-100 hover:shadow-sm"
-							}`}
-							onClick={() => {
-								if (activeSection !== btn.label) {
-									setActiveSection(btn.label);
-								}
-							}}
-						>
-							{btn.label}
-							{/*btn.label accede al valor de la propiedad label de ese objeto, que es el texto que se mostrará como contenido del enlace <a>*/}
-						</a>
-					</li>
-				))}
-			</ul>
-			<button
-				className="flex md:hidden pr-4 transition-transform duration-300 ease-in-out"
-				onClick={toggleMenu}
-			>
-				{menuOpen ? (
-					<FaTimes className=" text-gray-500" />
-				) : (
-					<FaBars className=" text-gray-500" />
+		<header>
+			<nav className=" bg-lime-200 bg-opacity-75 flex items-center justify-between shadow-sm ">
+				<div className="flex items-center pl-4">
+					<a href={logoLink} className="flex items-center pl-4">
+						<img className="size-16 " src={logo} alt="Logo" />
+					</a>
+					{/* depend on size-x see mobileMenu */}
+				</div>
+				<ul className=" space-x-8 justify-end pr-4 hidden md:flex">
+					{/* Al usar map en el prop btnNav este espera que le pase un array y recibir 2 parametros btn e index */}
+					{btnNav.map((btn, index) => (
+						<li key={index}>
+							{/*Cada iteracion me devuelve un LI con un A Link va ser la el A e indicara si esta seleccionado o no. Dentro le pongo una clase con un operado ternarario que me permite cambiar el estado de la variable activeSection*/}
+							<a
+								href={activeSection === btn.label ? null : btn.link}
+								className={`py-2 px-4 rounded-md transition duration-300 ease-in-out ${
+									activeSection === btn.label
+										? "font-bold cursor-default text-neutral-600"
+										: "text-neutral-800 hover:bg-lime-400 hover:text-neutral-100 hover:shadow-sm"
+								}`}
+								onClick={() => {
+									if (activeSection !== btn.label) {
+										setActiveSection(btn.label);
+									}
+								}}
+							>
+								{btn.label}
+								{/*btn.label accede al valor de la propiedad label de ese objeto, que es el texto que se mostrará como contenido del enlace <a>*/}
+							</a>
+						</li>
+					))}
+				</ul>
+				<button
+					className="flex md:hidden pr-4 transition-transform duration-300 ease-in-out"
+					onClick={toggleMenu}
+				>
+					{menuOpen ? (
+						<FaTimes className=" text-gray-500" />
+					) : (
+						<FaBars className=" text-gray-500" />
+					)}
+				</button>
+				{menuOpen && (
+					<MobileMenu
+						btnNav={btnNav}
+						activeSection={activeSection}
+						setActiveSection={setActiveSection}
+						toggleMenu={toggleMenu}
+						menuOpen={menuOpen}
+					/>
 				)}
-			</button>
-			{menuOpen && (
-				<MobileMenu
-					btnNav={btnNav}
-					activeSection={activeSection}
-					setActiveSection={setActiveSection}
-					toggleMenu={toggleMenu}
-					menuOpen={menuOpen}
-				/>
-			)}
-		</nav>
+			</nav>
+		</header>
 	);
 }
 //Validacion de los PROP q voy a usar en un funcion para evitar posibles errores
