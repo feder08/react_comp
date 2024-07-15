@@ -1,7 +1,7 @@
 import Card from "./Card.jsx";
-import logo01 from "../asset/images/iconsCARD/bicep.svg";
-import logo02 from "../asset/images/iconsCARD/dumbell.svg";
-import logo03 from "../asset/images/iconsCARD/coach.svg";
+import logo01 from "../assets/images/iconsCARD/bicep.svg";
+import logo02 from "../assets/images/iconsCARD/dumbell.svg";
+import logo03 from "../assets/images/iconsCARD/coach.svg";
 
 const CardHome = () => {
 	const sectionTittleCard =
