@@ -6,6 +6,8 @@ import logo03 from "../asset/images/iconsCARD/coach.svg";
 const CardHome = () => {
 	const sectionTittleCard =
 		"Descubre los Beneficios de Nuestros Servicios Personalizados";
+	const sectionParagraph =
+		"Probablemente ya has probado diversas estrategias para perder peso y ponerte en forma, solo para quedar decepcionado. Entendemos tu frustración y te ofrecemos no solo recursos físicos, sino también un plan alimentario personalizado y acompañamiento 24/7. Supera tus límites, escapa de la inercia y consigue el cuerpo que mereces. Si te sientes al borde de la desesperación, estás en el lugar correcto: obtén la ayuda que necesitas para superar cualquier obstáculo y redescubrir tu juventud.";
 
 	const cardHome = [
 		{
@@ -29,10 +31,13 @@ const CardHome = () => {
 	];
 	return (
 		<section className="text-lime-500 bg-lime-100 min-h-screen py-8 text-center ">
-			<h1 className="container mx-auto mb-24 mt-5 px-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase italic">
+			<h1 className="container mx-auto my-8 px-4 text-2xl sm:text-3xl md:text-4xl lg:text-4xl uppercase italic">
 				<strong> {sectionTittleCard}</strong>
 			</h1>
-			<div className="flex flex-wrap  justify-center items-stretch gap-8 xl:gap-x-44 w-full">
+			<p className=" text-center text-gray-700 text-sx sm:text-base italic my-8 xl:mx-72 mx-10 ">
+				{sectionParagraph}
+			</p>
+			<div className="flex flex-wrap mx-auto justify-center items-stretch gap-8 xl:gap-x-44 w-full">
 				{cardHome.map((card, index) => (
 					<Card
 						key={index}
