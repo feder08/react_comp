@@ -38,6 +38,7 @@ const CardHome = () => {
 				{sectionParagraph}
 			</p>
 			<div className="flex flex-wrap mx-auto justify-center items-stretch gap-8 xl:gap-x-44 w-full">
+				{/** Mismo que en la otra clase, se puede usar index como key porque es estatico */}
 				{cardHome.map((card, index) => (
 					<Card
 						key={index}
