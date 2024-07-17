@@ -13,6 +13,8 @@ const NavBar = () => {
 	const [activeSection, setActiveSection] = useState(labels.HOME);
 	const [isOpen, setIsOpen] = useState(false);
 
+	const CompanyName = "Spartan Fitness";
+
 	const nav = [
 		{label: labels.HOME, link: "#home"},
 		{label: labels.SERVICES, link: "#services"},
@@ -43,6 +45,9 @@ const NavBar = () => {
 					<a href={"#home"} className="flex items-center pl-4">
 						<img className="size-16 " src={logo} alt="Logo" />
 					</a>
+					<h3 className="uppercase ml-4 font-logoFont text-2xl text-neutral-600">
+						{CompanyName}
+					</h3>
 					{/* depend on size-x see mobileMenu */}
 				</div>
 				<ul className=" space-x-8 justify-end pr-4 hidden md:flex">
