@@ -89,7 +89,7 @@ const HomePage = () => {
 						<p className="text-left text-xs my-4 mx-4 leading-6  xl:text-base xl:my-12 xl:mx-12 xl:leading-8 italic">
 							{introduceAboutParagraph}
 						</p>
-						<button className="text-sm py-2 px-4 mx-auto my-auto rounded-md border-solid border-2 bg-transparent shadow-sm hover:bg-lime-200 mb-4 md:mb-12 ">
+						<button className="text-xs py-2 px-2 mx-auto my-auto rounded-md border-solid border-2 bg-transparent shadow-sm hover:bg-lime-200 mb-4 md:mb-12 ">
 							{btnAboutHome}
 						</button>
 					</article>
@@ -105,5 +105,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-//text-left text-xs my-4 mx-4 leading-7  xl:text-base xl:my-12 xl:mx-12 xl:leading-8
