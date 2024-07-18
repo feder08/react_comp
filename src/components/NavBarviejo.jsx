@@ -1,5 +1,5 @@
-import {useState, useEffect, useMemo} from "react";
-import {Link, useLocation} from "react-router-dom";
+import {useState, useEffect} from "react";
+import {Link} from "react-router-dom";
 import {FaBars, FaTimes} from "react-icons/fa";
 import logo from "../assets/images/loguito.png";
 
@@ -11,21 +11,17 @@ const labels = {
 };
 
 const NavBar = () => {
-	const location = useLocation();
 	const [activeSection, setActiveSection] = useState(labels.HOME);
 	const [isOpen, setIsOpen] = useState(false);
 
 	const CompanyName = "Spartan Fitness";
 
-	const nav = useMemo(
-		() => [
-			{label: labels.HOME, link: "/"},
-			{label: labels.SERVICES, link: "/services"},
-			{label: labels.ABOUT, link: "/about"},
-			{label: labels.CONTACT, link: "/contact"},
-		],
-		[]
-	);
+	const nav = [
+		{label: labels.HOME, link: "/"},
+		{label: labels.SERVICES, link: "/services"},
+		{label: labels.ABOUT, link: "/about"},
+		{label: labels.CONTACT, link: "/contact"},
+	];
 
 	const toggleMenu = () => setIsOpen(!isOpen);
 	useEffect(() => {
@@ -39,31 +35,23 @@ const NavBar = () => {
 		};
 	}, []);
 
-	// Set active section based on current path
-	useEffect(() => {
-		const currentPath = location.pathname;
-		const foundSection = nav.find((item) => item.link === currentPath);
-		if (foundSection) {
-			setActiveSection(foundSection.label);
-		}
-	}, [location.pathname, nav]);
-
 	const menuClass = isOpen
 		? "transform translate-x-0 opacity-100"
 		: "transform translate-x-full opacity-0";
 
 	return (
 		<header>
-			<nav className="bg-lime-200 bg-opacity-75 flex items-center justify-between shadow-sm">
+			<nav className=" bg-lime-200 bg-opacity-75 flex items-center justify-between shadow-sm ">
 				<div className="flex items-center pl-4">
 					<Link to={"/"} className="flex items-center pl-4">
-						<img className="size-16" src={logo} alt="Logo" />
+						<img className="size-16 " src={logo} alt="Logo" />
 					</Link>
 					<h3 className="uppercase ml-4 font-logoFont text-2xl text-neutral-600">
 						{CompanyName}
 					</h3>
+					{/* depend on size-x see mobileMenu */}
 				</div>
-				<ul className="space-x-8 justify-end pr-4 hidden md:flex">
+				<ul className=" space-x-8 justify-end pr-4 hidden md:flex">
 					{nav.map((btn, index) => (
 						<li key={index}>
 							<Link
@@ -74,7 +62,9 @@ const NavBar = () => {
 										: "text-neutral-800 hover:bg-lime-400 hover:text-neutral-100 hover:shadow-sm"
 								}`}
 								onClick={() => {
-									setActiveSection(btn.label);
+									if (activeSection !== btn.label) {
+										setActiveSection(btn.label);
+									}
 								}}
 							>
 								{btn.label}
@@ -110,8 +100,10 @@ const NavBar = () => {
 											: "text-neutral-800 hover:bg-lime-400 hover:text-neutral-100 hover:shadow-sm"
 									}`}
 									onClick={() => {
-										setActiveSection(btn.label);
-										setIsOpen(false); // Close menu after clicking
+										if (activeSection !== btn.label) {
+											setActiveSection(btn.label);
+											toggleMenu();
+										}
 									}}
 								>
 									{btn.label}
@@ -124,5 +116,4 @@ const NavBar = () => {
 		</header>
 	);
 };
-
 export default NavBar;
