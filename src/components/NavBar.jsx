@@ -26,16 +26,18 @@ const NavBar = () => {
 		],
 		[]
 	);
-
+	//Management state of hamburger Menu
 	const toggleMenu = () => setIsOpen(!isOpen);
 	useEffect(() => {
 		const closeMenu = () => setIsOpen(false);
 		window.addEventListener("scroll", closeMenu);
 		window.addEventListener("resize", closeMenu);
+		window.addEventListener("popstate", closeMenu);
 
 		return () => {
 			window.removeEventListener("scroll", closeMenu);
 			window.removeEventListener("resize", closeMenu);
+			window.removeEventListener("popstate", closeMenu);
 		};
 	}, []);
 
