@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom";
 import imgHome from "../assets/images/background.jpg";
 import Card from "./Card.jsx";
 import logo01 from "../assets/images/iconsCARD/bicep.svg";
@@ -62,7 +63,7 @@ const HomePage = () => {
 					</button>
 				</div>
 			</section>
-			<section className="text-lime-500 bg-lime-50  py-8 text-center ">
+			<section className="text-lime-500 bg-neutral-100  py-8 text-center ">
 				<h1 className="container mx-auto my-8 px-4 text-2xl sm:text-3xl md:text-4xl lg:text-4xl uppercase ">
 					{sectionCardTittle}
 				</h1>
@@ -80,7 +81,7 @@ const HomePage = () => {
 					))}
 				</div>
 			</section>
-			<section className="flex flex-col items-center text-gray-700 py-4 bg-neutral-100">
+			<section className="flex flex-col items-center text-gray-700 py-4 bg-neutral-200">
 				<h1 className="uppercase text-center my-8 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
 					{introduceAboutTittle}
 				</h1>
@@ -90,7 +91,7 @@ const HomePage = () => {
 							{introduceAboutParagraph}
 						</p>
 						<button className="text-sm py-2 px-2 mx-auto my-auto rounded-md border-solid border-2 bg-transparent shadow-sm hover:bg-lime-200 mb-4 md:mb-12 ">
-							<a href="">{btnAboutHome}</a>
+							<Link to={btnAboutHome}></Link>
 						</button>
 					</article>
 					<img

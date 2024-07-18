@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom";
 import logo from "../assets/images/loguito.png";
 import iconFb from "../assets/images/iconsCARD/facebook.svg";
 import iconWa from "../assets/images/iconsCARD/whatsapp.svg";
@@ -15,16 +16,16 @@ const Footer = () => {
 	];
 	const companyTittles = "Nuestro emprendimiento";
 	const companySection = [
-		{title: "Nuestros servicios", link: "#services"},
-		{title: "Quienes somos", link: "#about"},
-		{title: "Contáctanos", link: "#contact"},
+		{title: "Nuestros servicios", link: "/services"},
+		{title: "Quienes somos", link: "/about"},
+		{title: "Contáctanos", link: "/contact"},
 	];
 
 	const legalTittle = "Legal";
 	const legalSection = [
-		{title: "Términos y Condiciones", link: "#terms&cond"},
-		{title: "Política de Privacidad", link: "#privacypolicy"},
-		{title: "Política de Cookies", link: "#cookiespolicy"},
+		{title: "Términos y Condiciones", link: "/terms&cond"},
+		{title: "Política de Privacidad", link: "/privacypolicy"},
+		{title: "Política de Cookies", link: "/cookiespolicy"},
 	];
 
 	const copyWright =
@@ -38,7 +39,9 @@ const Footer = () => {
 						<h3 className="text-neutral-300 mb-2">{companyName}</h3>
 					</strong>
 
-					<img src={logo} alt="Logo" className="h-16 w-16 mb-4" />
+					<Link to="/">
+						<img src={logo} alt="Logo" className="h-16 w-16 mb-4" />
+					</Link>
 				</div>
 
 				<div className="flex flex-col items-center">
@@ -66,12 +69,12 @@ const Footer = () => {
 					<ul className="list-disc text-neutral-300">
 						{companySection.map((btnSection, index) => (
 							<li key={index} className="mb-2">
-								<a
-									href={btnSection.link}
+								<Link
+									to={btnSection.link}
 									className="hover:underline text-neutral-300"
 								>
 									{btnSection.title}
-								</a>
+								</Link>
 							</li>
 						))}
 					</ul>
@@ -84,12 +87,12 @@ const Footer = () => {
 					<ul className="list-disc text-neutral-300">
 						{legalSection.map((btnLegal, index) => (
 							<li key={index} className="mb-2">
-								<a
-									href={btnLegal.link}
+								<Link
+									to={btnLegal.link}
 									className="hover:underline text-neutral-300"
 								>
 									{btnLegal.title}
-								</a>
+								</Link>
 							</li>
 						))}
 					</ul>

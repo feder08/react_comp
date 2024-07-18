@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react";
+import {Link} from "react-router-dom";
 import {FaBars, FaTimes} from "react-icons/fa";
 import logo from "../assets/images/loguito.png";
 
@@ -16,10 +17,10 @@ const NavBar = () => {
 	const CompanyName = "Spartan Fitness";
 
 	const nav = [
-		{label: labels.HOME, link: "#home"},
-		{label: labels.SERVICES, link: "#services"},
-		{label: labels.ABOUT, link: "#about"},
-		{label: labels.CONTACT, link: "#contact"},
+		{label: labels.HOME, link: "/"},
+		{label: labels.SERVICES, link: "/services"},
+		{label: labels.ABOUT, link: "/about"},
+		{label: labels.CONTACT, link: "/contact"},
 	];
 
 	const toggleMenu = () => setIsOpen(!isOpen);
@@ -42,9 +43,9 @@ const NavBar = () => {
 		<header>
 			<nav className=" bg-lime-200 bg-opacity-75 flex items-center justify-between shadow-sm ">
 				<div className="flex items-center pl-4">
-					<a href={"#home"} className="flex items-center pl-4">
+					<Link to={"/"} className="flex items-center pl-4">
 						<img className="size-16 " src={logo} alt="Logo" />
-					</a>
+					</Link>
 					<h3 className="uppercase ml-4 font-logoFont text-2xl text-neutral-600">
 						{CompanyName}
 					</h3>
@@ -53,8 +54,8 @@ const NavBar = () => {
 				<ul className=" space-x-8 justify-end pr-4 hidden md:flex">
 					{nav.map((btn, index) => (
 						<li key={index}>
-							<a
-								href={btn.link}
+							<Link
+								to={btn.link}
 								className={`py-2 px-4 rounded-md transition duration-300 ease-in-out ${
 									activeSection === btn.label
 										? "font-bold cursor-default text-neutral-600"
@@ -67,7 +68,7 @@ const NavBar = () => {
 								}}
 							>
 								{btn.label}
-							</a>
+							</Link>
 						</li>
 					))}
 				</ul>
@@ -91,8 +92,8 @@ const NavBar = () => {
 					<ul className="space-y-4 p-2">
 						{nav.map((btn, index) => (
 							<li key={index}>
-								<a
-									href={btn.link}
+								<Link
+									to={btn.link}
 									className={`block text-center py-2 px-4 rounded-md transition duration-300 ease-in-out ${
 										activeSection === btn.label
 											? "font-bold cursor-default text-neutral-600"
@@ -106,7 +107,7 @@ const NavBar = () => {
 									}}
 								>
 									{btn.label}
-								</a>
+								</Link>
 							</li>
 						))}
 					</ul>
