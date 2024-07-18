@@ -10,7 +10,7 @@ const HomePage = () => {
 	const homeSlogan = "¿Listo para alcanzar tus metas?";
 	const homeInfo =
 		"Descubre cómo nuestras rutinas personalizadas para el gimnasio o casa, seguimiento nutricional y acompañamiento 24/7 pueden asegurar tu éxito. Explora más y transforma tu vida hoy mismo.";
-	const btnWelcome = "Explora Nuestro Programa";
+	const btnWelcome = "Explora Nuestros Programa";
 	const sectionCardTittle =
 		"Descubre los Beneficios de Nuestros Servicios Personalizados";
 	const sectionCardParagraph =
@@ -59,7 +59,7 @@ const HomePage = () => {
 						{homeInfo}
 					</p>
 					<button className="mt-16 px-6 py-3 bg-lime-200 text-neutral-600 font-bold rounded-lg hover:bg-lime-400 hover:text-neutral-100 sm:text-lg shadow-sm hover:shadow-sm transition-transform duration-300 ease-in-out uppercase">
-						{btnWelcome}
+						<Link to="/services">{btnWelcome}</Link>
 					</button>
 				</div>
 			</section>
@@ -91,7 +91,7 @@ const HomePage = () => {
 							{introduceAboutParagraph}
 						</p>
 						<button className="text-sm py-2 px-2 mx-auto my-auto rounded-md border-solid border-2 bg-transparent shadow-sm hover:bg-lime-200 mb-4 md:mb-12 ">
-							<Link to={btnAboutHome}></Link>
+							<Link to="/about">{btnAboutHome}</Link>
 						</button>
 					</article>
 					<img
