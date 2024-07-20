@@ -2,15 +2,21 @@ import PropTypes from "prop-types";
 
 export function Card({logoCard, subtCard, infoCard, children}) {
 	return (
-		<div className="max-w-xs rounded overflow-hidden shadow-sm bg-lime-200 bg-opacity-35 px-6 py-4 flex flex-col items-center justify-center space-y-4">
+		<div className="max-w-xs grid grid-rows-[auto,auto,auto] rounded overflow-hidden shadow-sm bg-lime-200 bg-opacity-35 px-6 py-4 ">
 			{logoCard && (
-				<img className="h-max object-contain" src={logoCard} alt="Card Logo" />
+				<img
+					className="h-max w-auto object-contain mx-auto my-auto"
+					src={logoCard}
+					alt="Card Logo"
+				/>
 			)}
-			<h2 className="font-bold text-xl sm:text-2xl text-center">{subtCard}</h2>
-			<p className="text-gray-700 text-sm italic sm:text-base text-center">
+			<h2 className="font-bold text-xl sm:text-2xl text-center mt-2">
+				{subtCard}
+			</h2>
+			<p className="text-gray-700 text-sm italic sm:text-base text-center mt-2">
 				{infoCard}
 			</p>
-			{children}
+			<div className="mt-auto flex justify-center">{children}</div>
 		</div>
 	);
 }

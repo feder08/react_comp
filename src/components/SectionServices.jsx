@@ -96,7 +96,7 @@ const Services = () => {
 					</h1>
 				</strong>
 
-				<div className="flex flex-wrap mx-auto justify-center items-stretch mt-20 gap-8 xl:gap-x-44 w-full">
+				<div className="flex flex-wrap mx-auto justify-center items-stretch my-auto gap-8 xl:gap-x-44 w-full">
 					{buyServiceCards.map((card, index) => (
 						<Card
 							key={index}
@@ -104,7 +104,7 @@ const Services = () => {
 							subtCard={card.subtCard}
 							infoCard={card.infoCard}
 						>
-							<button className="text-sm text-bold text-gray-700 py-2 px-2 mx-auto my-8 rounded-md  bg-transparent shadow-sm hover:bg-lime-300 mb-4 md:mb-12 ">
+							<button className="text-sm text-bold text-gray-700 py-2 px-2 mx-auto my-8 rounded-md border-gray-400 border-2 bg-transparent shadow-sm hover:bg-lime-300 mb-4 md:mb-12 ">
 								{card.children}
 							</button>
 						</Card>
