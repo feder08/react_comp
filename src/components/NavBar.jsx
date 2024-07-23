@@ -2,6 +2,7 @@ import {useState, useEffect, useMemo} from "react";
 import {Link, useLocation} from "react-router-dom";
 import {FaBars, FaTimes} from "react-icons/fa";
 import logo from "../assets/images/loguito.png";
+import "../assets/css/NavBar.css";
 
 const labels = {
 	HOME: "Home",
@@ -26,10 +27,12 @@ const NavBar = () => {
 		],
 		[]
 	);
-	//Management state of hamburger Menu
-	const toggleMenu = () => setIsOpen(!isOpen);
+
+	const toggleMenu = () => setIsOpen((prev) => !prev);
+
 	useEffect(() => {
 		const closeMenu = () => setIsOpen(false);
+
 		window.addEventListener("scroll", closeMenu);
 		window.addEventListener("resize", closeMenu);
 		window.addEventListener("popstate", closeMenu);
@@ -41,7 +44,6 @@ const NavBar = () => {
 		};
 	}, []);
 
-	// Set active section based on current path
 	useEffect(() => {
 		const currentPath = location.pathname;
 		const foundSection = nav.find((item) => item.link === currentPath);
@@ -50,13 +52,11 @@ const NavBar = () => {
 		}
 	}, [location.pathname, nav]);
 
-	const menuClass = isOpen
-		? "transform translate-x-0 opacity-100"
-		: "transform translate-x-full opacity-0";
+	const menuClass = isOpen ? "slide-down" : "slide-up";
 
 	return (
 		<header>
-			<nav className="bg-lime-200 bg-opacity-75 flex items-center justify-between shadow-sm">
+			<nav className="bg-lime-200 bg-opacity-75 flex items-center justify-between shadow-sm ">
 				<div className="flex items-center pl-4">
 					<Link to={"/"} className="flex items-center pl-4">
 						<img className="size-16" src={logo} alt="Logo" />
@@ -97,32 +97,30 @@ const NavBar = () => {
 					</button>
 				</div>
 			</nav>
-			{isOpen && (
-				<div
-					className={`fixed top-16 right-0 bottom-0 items-center justify-center z-50 bg-lime-200 bg-opacity-80 w-1/2 h-auto rounded-b-md transition-transform duration-300 ease-in-out shadow-sm max-h-full overflow-y-auto ${menuClass}`}
-				>
-					<ul className="space-y-4 p-2">
-						{nav.map((btn, index) => (
-							<li key={index}>
-								<Link
-									to={btn.link}
-									className={`block text-center py-2 px-4 rounded-md transition duration-300 ease-in-out ${
-										activeSection === btn.label
-											? "font-bold cursor-default text-neutral-600"
-											: "text-neutral-800 hover:bg-lime-400 hover:text-neutral-100 hover:shadow-sm"
-									}`}
-									onClick={() => {
-										setActiveSection(btn.label);
-										setIsOpen(false); // Close menu after clicking
-									}}
-								>
-									{btn.label}
-								</Link>
-							</li>
-						))}
-					</ul>
-				</div>
-			)}
+			<div
+				className={`absolute top-16 right-0 z-50 bg-lime-200 bg-opacity-80 w-1/2 max-h-full rounded-b-md transition-transform duration-300 ease-in-out shadow-sm overflow-y-auto ${menuClass}`}
+			>
+				<ul className="space-y-4 p-2">
+					{nav.map((btn, index) => (
+						<li key={index}>
+							<Link
+								to={btn.link}
+								className={`block text-center py-2 px-4 rounded-md transition duration-300 ease-in-out ${
+									activeSection === btn.label
+										? "font-bold cursor-default text-neutral-600"
+										: "text-neutral-800 hover:bg-lime-400 hover:text-neutral-100 hover:shadow-sm"
+								}`}
+								onClick={() => {
+									setActiveSection(btn.label);
+									setIsOpen(false); // Close menu after clicking
+								}}
+							>
+								{btn.label}
+							</Link>
+						</li>
+					))}
+				</ul>
+			</div>
 		</header>
 	);
 };

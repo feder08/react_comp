@@ -35,9 +35,7 @@ const NavBar = () => {
 		};
 	}, []);
 
-	const menuClass = isOpen
-		? "transform translate-x-0 opacity-100"
-		: "transform translate-x-full opacity-0";
+	const menuClass = isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0";
 
 	return (
 		<header>
@@ -87,7 +85,7 @@ const NavBar = () => {
 			</nav>
 			{isOpen && (
 				<div
-					className={`fixed top-16 right-0 bottom-0 items-center justify-center z-50 bg-lime-200 bg-opacity-80 w-1/2 h-auto rounded-b-md transition-transform duration-300 ease-in-out shadow-sm max-h-full overflow-y-auto ${menuClass}`}
+					className={`fixed top-16 right-0 left-0 z-50 bg-lime-200 bg-opacity-80 transition-all duration-300 ease-in-out overflow-hidden ${menuClass}`}
 				>
 					<ul className="space-y-4 p-2">
 						{nav.map((btn, index) => (
