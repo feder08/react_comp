@@ -1,0 +1,116 @@
+.menu-container {
+	position: absolute;
+	top: 4rem;
+	right: 0;
+	z-index: 50;
+	width: 50%;
+	max-height: 0;
+	overflow: hidden;
+	background-color: rgba(2 2, 1820.8);
+	border-radius: 0 0 0.375rem 0.375rem;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: max-height 0.5s ease, opacity 0.4s ease;
+}
+
+.menu-container.open {
+	max-height: 100vh;
+	opacity: 1;
+}
+
+.menu-container.closed {
+	max-height: 0;
+	opacity: 0;
+}
+
+@keyframes fall {
+	0% {
+		transform: translateY(-150px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.animated-fall {
+	opacity: 0;
+	animation: fall 1.5s ease-out forwards;
+}
+
+@keyframes enter-left {
+	0% {
+		transform: translateX(-150px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+.animated-eleft {
+	opacity: 0;
+	animation: enter-left 1.5s ease-out forwards;
+}
+@keyframes enter-right {
+	0% {
+		transform: translateX(150px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+.animated-eright {
+	opacity: 0;
+	animation: enter-right 1.5s ease-out forwards;
+}
+
+@keyframes upper {
+	0% {
+		transform: translateY(150px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.animated-upper {
+	opacity: 0;
+	animation: upper 1.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.animated-fade-in {
+	opacity: 0;
+	animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animated-delay-1 {
+	animation-delay: 0.5s;
+}
+
+.animated-delay-2 {
+	animation-delay: 0.75s;
+}
+
+.animated-delay-3 {
+	animation-delay: 1s;
+}
+
+.animated-delay-4 {
+	animation-delay: 0.25s;
+}

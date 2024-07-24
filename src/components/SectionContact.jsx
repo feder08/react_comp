@@ -1,3 +1,4 @@
+import "../assets/css/Extras.css";
 import bgContact from "../assets/images/gymContact.jpg";
 
 const Contact = () => {
@@ -63,20 +64,20 @@ const Contact = () => {
 	return (
 		<>
 			<section
-				className="bg-cover bg-center flex flex-col justify-center items-start px-2  font-sans"
+				className="bg-cover bg-fixed bg-center min-h-screen flex flex-col justify-center items-start px-2  font-sans"
 				style={{backgroundImage: `url(${bgContact})`}}
 			>
-				<div className="w-full text-neutral-200 bg-black bg-opacity-50 text-center ">
-					<h1 className=" mt-10 text-6xl sm:text-7xl lg:text-8xl mx-auto mb-16 md:mb-24 lg:mb-32">
+				<div className="w-full text-neutral-200 bg-black bg-opacity-50 text-center animated-fade-in ">
+					<h1 className=" mt-10 text-6xl sm:text-7xl lg:text-8xl mx-auto mb-16 md:mb-24 lg:mb-32 animated-fade-in animated-delay-4">
 						<strong>{contactTittle}</strong>
 					</h1>
-					<h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl mx-2 my-8 rounded-md">
+					<h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl mx-2 my-8 rounded-md animated-fade-in animated-delay-4">
 						{contactSubtittle}
 					</h2>
 				</div>
 			</section>
 			<section className="flex flex-col md:flex-row justify-between items-start md:items-start w-full bg-neutral-300">
-				<article className="flex flex-col w-full md:w-1/2 p-4">
+				<article className="flex flex-col w-full md:my-8 md:w-1/2 p-4">
 					<h1 className="text-2xl font-semibold mb-4">{tittleForm}</h1>
 					<form className="w-full ">
 						{formFields.map((field, index) => (
@@ -116,7 +117,7 @@ const Contact = () => {
 						</div>
 					</form>
 				</article>
-				<article className="flex flex-col w-full md:w-1/2 p-4">
+				<article className="flex flex-col w-full md:w-1/2 p-4 md:my-8">
 					<h2 className="text-2xl font-semibold mb-4">{contactInfo}</h2>
 					<div className="mb-4">
 						<h3 className="text-lg font-medium">

@@ -1,8 +1,8 @@
+import "../assets/css/Extras.css";
 import {useState, useEffect, useMemo} from "react";
 import {Link, useLocation} from "react-router-dom";
 import {FaBars, FaTimes} from "react-icons/fa";
 import logo from "../assets/images/loguito.png";
-import "../assets/css/NavBar.css";
 
 const labels = {
 	HOME: "Home",
@@ -52,8 +52,6 @@ const NavBar = () => {
 		}
 	}, [location.pathname, nav]);
 
-	const menuClass = isOpen ? "slide-down" : "slide-up";
-
 	return (
 		<header>
 			<nav className="bg-lime-200 bg-opacity-75 flex items-center justify-between shadow-sm ">
@@ -97,9 +95,7 @@ const NavBar = () => {
 					</button>
 				</div>
 			</nav>
-			<div
-				className={`absolute top-16 right-0 z-50 bg-lime-200 bg-opacity-80 w-1/2 max-h-full rounded-b-md transition-transform duration-300 ease-in-out shadow-sm overflow-y-auto ${menuClass}`}
-			>
+			<div className={`menu-container ${isOpen ? "open" : "closed"}`}>
 				<ul className="space-y-4 p-2">
 					{nav.map((btn, index) => (
 						<li key={index}>

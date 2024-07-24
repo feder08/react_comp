@@ -1,3 +1,4 @@
+import "../assets/css/Extras.css";
 import trainer from "../assets/images/personaltrainer.png";
 import backGym01 from "../assets/images/gym01.jpg";
 import backGym02 from "../assets/images/gym02.jpg";
@@ -61,10 +62,10 @@ const About = () => {
 				style={{backgroundImage: `url(${backGym01})`}}
 			>
 				<div className="w-full  text-neutral-200 text-center">
-					<h1 className=" text-6xl sm:text-7xl lg:text-8xl mx-auto mb-16 md:mb-24 lg:mb-32">
+					<h1 className=" text-6xl sm:text-7xl lg:text-8xl mx-auto mb-16 md:mb-24 lg:mb-32 animated-fall">
 						<strong>{tittleAbout}</strong>
 					</h1>
-					<h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl mx-2 my-8 bg-black bg-opacity-35 rounded-md">
+					<h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl mx-2 my-8 bg-black bg-opacity-35 rounded-md animated-upper">
 						{subtittleAbout}
 					</h2>
 				</div>

@@ -1,3 +1,4 @@
+import "../assets/css/Extras.css";
 import Card from "./Card";
 import trainerImg from "../assets/images/personaltrainer.jpg";
 import nutritionImg from "../assets/images/nutrition.jpg";
@@ -50,9 +51,9 @@ const Services = () => {
 
 	return (
 		<>
-			<section className="flex flex-col items-center text-gray-700 py-4 bg-neutral-200">
+			<section className="flex flex-col items-center text-gray-700 py-4 bg-neutral-200 ">
 				<strong>
-					<h1 className="uppercase text-center leading-10 my-8 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+					<h1 className="uppercase text-center leading-10  mt-8 mb-2 sm:my-8 text-2xl sm:text-3xl md:text-4xl lg:text-5xl animated-fade-in">
 						{tittleService}
 					</h1>
 				</strong>
@@ -65,17 +66,17 @@ const Services = () => {
 								index % 2 === 0 ? "md:flex-row-reverse" : ""
 							}`}
 						>
-							<div className="md:w-1/2 bg-neutral-300 rounded-md mx-2 my-2 ">
-								<h2 className="text-center md:text-2xl text-3xl font-bold mx-2 my-2 uppercase">
+							<div className="md:w-1/2 bg-neutral-300 rounded-md mx-2 my-2 animated-fade-in animated-delay-1 ">
+								<h2 className="text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mx-2 my-2 uppercase animated-eright animated-delay-2">
 									{service.tittleService}
 								</h2>
-								<p className="text-left text-xs mx-2 my-2 leading-6 xl:text-base xl:my-12 xl:leading-8 italic">
+								<p className="text-left text-xs mx-2 my-2 leading-6 xl:text-base xl:my-12 xl:leading-8 italic animated-eright animated-delay-3">
 									{service.infoService}
 								</p>
 							</div>
 							<div className="md:w-1/2 p-4">
 								<img
-									className="w-full h-auto rounded object-cover shadow-sm"
+									className="w-full h-auto rounded object-cover shadow-sm animated-eleft animated-delay-3"
 									src={service.imgService}
 									alt={service.titService}
 								/>
